@@ -9,6 +9,8 @@ import { faCoffee, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 export class ButtonComponent implements OnInit {
   @Input() icon?: IconDefinition;
   @Input() text?: string;
+  @Input() type: string = 'button';
+  @Input() class?: string;
   @Output() btnClick: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -21,4 +23,7 @@ export class ButtonComponent implements OnInit {
     this.btnClick.emit();
   }
 
+  getClass() {
+    return 'btn ' + this.class;
+  }
 }

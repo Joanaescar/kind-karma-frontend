@@ -1,7 +1,6 @@
 <div class="modal-header">
     <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
-    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-        (click)="activeModal.dismiss()"></button>
+    <app-button type="button" [icon]="closeIcon" (btnClick)="dismissModal()"></app-button>
 </div>
 <div class="modal-body">
     <div class="input-group mb-3">
@@ -21,14 +20,15 @@
         </span>
     </div>
     <p>
-        <button type="button" class="btn btn-outline-success" (click)="showRegisterModal()">Criar nova conta</button>
+        <app-button type="button" class="btn-outline-success" (btnClick)="showRegisterModal()" text="Criar nova conta">
+        </app-button>
     </p>
     <p>
-        <button type="button" class="btn btn-outline-secondary" (click)="showForgotModal()"> Esqueceu a sua
-            password?</button>
+        <app-button type="button" class="btn-outline-secondary" (btnClick)="showForgotModal()" text="Esqueceu a sua
+        password?"></app-button>
     </p>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="activeModal.close()">Close</button>
-    <button type="button" class="btn btn-primary">Login</button>
+    <app-button (btnClick)="closeModal()" type="button" class="btn-secondary" text="Close"></app-button>
+    <app-button type="submit" class="btn-primary" text="Login"></app-button>
 </div>

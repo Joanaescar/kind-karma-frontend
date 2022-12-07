@@ -1,5 +1,5 @@
 import { Component, OnInit, } from '@angular/core';
-import { faKey } from '@fortawesome/free-solid-svg-icons';
+import { faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component'
 import { RegisterComponent } from '../register/register.component';
@@ -11,12 +11,21 @@ import { RegisterComponent } from '../register/register.component';
 })
 export class LoginComponent implements OnInit {
 
+  closeIcon = faXmark;
   passIcon = faKey;
 
   constructor(public activeModal: NgbActiveModal, private modalService: NgbModal) { }
 
   ngOnInit(): void {
 
+  }
+
+  dismissModal() {
+    this.activeModal.dismiss()
+  }
+
+  closeModal() {
+    this.activeModal.close()
   }
 
   showForgotModal() {
@@ -32,4 +41,5 @@ export class LoginComponent implements OnInit {
     const modalRef = this.modalService.open(RegisterComponent);
     modalRef.componentInstance.name = 'World';
   }
+
 }
