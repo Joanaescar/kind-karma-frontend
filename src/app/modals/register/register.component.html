@@ -1,1 +1,28 @@
-<p>register works!</p>
+<div class="modal-header">
+    <h1 class="modal-title fs-5" id="signInModal">Criar nova conta</h1>
+    <app-button type="button" [icon]="closeIcon" (btnClick)="dismissModal()"></app-button>
+</div>
+<div class="modal-body">
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="signInUsernameInput" placeholder="Username">
+            <label for="signInUsernameInput">Username</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="email" class="form-control" id="signInEmailInput" placeholder="name@example.com">
+            <label for="signInEmailInput">Email</label>
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="form-floating">
+            <input type="password" class="form-control form-submit" id="signInPasswordInput" placeholder="Password">
+            <label for="signInPasswordInput">Password</label>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <app-button (btnClick)="backModal()" type="button" class="btn-secondary" text="Voltar"></app-button>
+    <app-button type="submit" class="btn-primary" text="Registar"></app-button>
+</div>

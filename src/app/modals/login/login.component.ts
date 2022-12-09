@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   closeIcon = faXmark;
   passIcon = faKey;
 
-  constructor(public activeModal: NgbActiveModal, private modalService: NgbModal) { }
+  constructor(private activeModal: NgbActiveModal, private modalService: NgbModal) { }
 
   ngOnInit(): void {
 
