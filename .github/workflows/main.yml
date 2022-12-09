@@ -42,4 +42,4 @@ jobs:
         run: npm run build
         
       - name: Copy Dist
-        run: cp dist/kind-karma-frontend/** ~/github/kind-karma-frontend/production
+        run: cp -r dist/kind-karma-frontend/** ~/github/kind-karma-frontend/production
