@@ -1,6 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { faKey, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component'
 import { RegisterComponent } from '../register/register.component';
 
@@ -13,8 +14,11 @@ export class LoginComponent implements OnInit {
 
   closeIcon = faXmark;
   passIcon = faKey;
+  emailInput!: string;
+  passwordInput!: string;
 
-  constructor(private activeModal: NgbActiveModal, private modalService: NgbModal) { }
+  constructor(private activeModal: NgbActiveModal, private modalService: NgbModal,
+    private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
 
@@ -40,6 +44,10 @@ export class LoginComponent implements OnInit {
 
     const modalRef = this.modalService.open(RegisterComponent);
     modalRef.componentInstance.name = 'World';
+  }
+
+  async onLoginClick() {
+    await this.authenticationService.login(this.emailInput, this.passwordInput)
   }
 
 }

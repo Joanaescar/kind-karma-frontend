@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -50,6 +51,7 @@ const routes: Routes = [
     NgbModule,
     FormsModule,
     FontAwesomeModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

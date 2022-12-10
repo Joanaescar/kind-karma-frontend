@@ -6,13 +6,15 @@
     <div class="input-group mb-3">
         <span class="input-group-text">@</span>
         <div class="form-floating">
-            <input type="email" class="form-control" id="loginEmailInput" placeholder="name@example.com">
+            <input type="email" class="form-control" id="loginEmailInput" [(ngModel)]="emailInput"
+                placeholder="name@example.com">
             <label for="loginEmailInput">Email</label>
         </div>
     </div>
     <div class="input-group mb-3">
         <div class="form-floating">
-            <input type="password" class="form-control form-submit" id="loginPasswordInput" placeholder="Password">
+            <input type="password" class="form-control form-submit" id="loginPasswordInput" [(ngModel)]="passwordInput"
+                placeholder="Password">
             <label for="loginPasswordInput">Password</label>
         </div>
         <span class="input-group-text">
@@ -30,5 +32,5 @@
 </div>
 <div class="modal-footer">
     <app-button (btnClick)="closeModal()" type="button" class="btn-secondary" text="Close"></app-button>
-    <app-button type="submit" class="btn-primary" text="Login"></app-button>
+    <app-button (btnClick)="onLoginClick()" type="submit" class="btn-primary" text="Login"></app-button>
 </div>
